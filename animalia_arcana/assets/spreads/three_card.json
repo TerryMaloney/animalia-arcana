@@ -1,0 +1,11 @@
+{
+  "id": "three_card",
+  "name": "Past • Present • Future",
+  "cardCount": 3,
+  "positions": ["past", "present", "future"],
+  "positionMeanings": [
+    "Influences from the past",
+    "Current situation and energies",
+    "Likely trajectory if unchanged"
+  ]
+}

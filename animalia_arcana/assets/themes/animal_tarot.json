@@ -1,0 +1,11 @@
+{
+  "deckId": "animal_tarot",
+  "palette": {
+    "bg": "#0d0b1a",
+    "primary": "#d4af37",
+    "accent": "#7a5cff",
+    "text": "#e8e6ff"
+  },
+  "font": { "title": "Serif", "body": "Sans" },
+  "backgroundImage": null
+}

@@ -1,0 +1,147 @@
+### 0. The Fool - Butterfly
+**Upright**: New beginnings, adventure, childlike wonder, transformation, trust in the journey  
+**Reversed**: Hesitation, reckless leaps, naivety, fear of change  
+**Keywords**: Innocence, Freedom, Leap of Faith, New Journey, Trust  
+
+**MidJourney Prompt**:
+```
+"THE FOOL tarot card, classic Rider-Waite Smith style, vibrant monarch butterfly with orange and black wings hovering at rocky cliff edge about to take flight, mountain valley vista below with morning mist, small cloth bundle tied to butterfly wing, single white rose blooming from cliff rocks, sunrise sky with golden clouds, ornate decorative border frame with gold filigree, card title 'THE FOOL' in elegant banner at bottom only, no text at top, clean composition, warm sunrise golds and soft morning pastels, mystical atmosphere, detailed traditional illustration, vintage tarot deck aesthetic, professional tarot card design, high resolution, --ar 2:3"
+```
+
+### 1. The Magician - Fox
+**Upright**: Manifestation, resourcefulness, skill, using your tools wisely  
+**Reversed**: Manipulation, untapped potential, scattered focus  
+**Keywords**: Willpower, Manifestation, Skill, Focus, Creation  
+
+**MidJourney Prompt**:
+```
+"THE MAGICIAN tarot card, Rider-Waite style, clever red fox standing upright at stone altar, one paw pointing to heaven one to earth, tarot symbols (wand cup sword pentacle) arranged on table, infinity symbol glowing above head, mystical forest background, ornate art nouveau border frame, rich reds and golds with deep forest greens, mystical atmosphere, detailed illustration, vintage tarot aesthetic, high resolution, --ar 2:3"
+```
+
+### 2. The High Priestess - Owl
+**Upright**: Intuition, inner wisdom, hidden knowledge, patience  
+**Reversed**: Secrets withheld, ignoring intuition, superficial thinking  
+**Keywords**: Intuition, Mystery, Inner Voice, Sacred Knowledge, Subconscious  
+
+**MidJourney Prompt**:
+```
+"THE HIGH PRIESTESS tarot card, Rider-Waite style, majestic white barn owl perched between black and white marble pillars, crescent moon at feet, ancient scroll tucked under wing, starry night sky with hanging veil, pomegranates and palms in background, ornate art nouveau border frame, deep indigo and silver with white accents, mystical atmosphere, detailed illustration, vintage tarot aesthetic, high resolution, --ar 2:3"
+```
+
+### 3. The Empress - Cow
+**Upright**: Abundance, nurturing, fertility, creation, comfort  
+**Reversed**: Creative blocks, dependence, smothering, neglect  
+**Keywords**: Fertility, Abundance, Nature, Nurturing, Creation  
+
+**MidJourney Prompt**:
+```
+"THE EMPRESS tarot card, Rider-Waite style, serene Holstein cow crowned with wheat sheaves and wildflowers, reclining in lush green meadow, flowing stream and forest in background, heart-shaped shield with Venus symbol, ripe fruit scattered around, ornate art nouveau border frame, warm golden light with rich greens, mystical atmosphere, detailed illustration, vintage tarot aesthetic, high resolution, --ar 2:3"
+```
+
+### 4. The Emperor - Lion
+**Upright**: Stability, structure, authority, protection, confidence  
+**Reversed**: Rigidity, dominance, abuse of power, chaos  
+**Keywords**: Authority, Structure, Control, Leadership, Father Figure  
+
+**MidJourney Prompt**:
+```
+"THE EMPEROR tarot card, Rider-Waite style, majestic male lion seated on orn# Animalia Arcana Tarot App - Complete Development Plan
+
+## 📱 App Overview
+**Name**: Animalia Arcana - Animal Spirit Tarot  
+**Platform**: Google Play Store (Android)  
+**Category**: Lifestyle / Entertainment  
+**Target Audience**: Tarot enthusiasts, spiritual seekers, animal lovers  
+
+## 🎯 Core Features
+
+### Essential Features (MVP)
+- **Digital Card Deck**: Full 78-card Animalia Arcana deck
+- **Card Readings**: 
+  - Single card pull
+  - 3-card spread (Past/Present/Future)
+  - Celtic Cross (10 cards)
+- **Card Meanings**: Detailed upright/reversed interpretations
+- **Daily Card**: Push notification with daily guidance
+- **Card Gallery**: Browse and study individual cards
+- **Reading Journal**: Save and review past readings
+
+### Advanced Features (Future Updates)
+- **Custom Spreads**: Create personalized layouts
+- **Animal Spirit Guide**: Match users with their spirit animal
+- **Meditation Mode**: Guided meditations with card imagery
+- **Sharing**: Export readings as images
+- **Premium Content**: Extended interpretations, additional spreads
+
+## 🎨 App Design & UI/UX
+
+### Visual Theme
+- **Style**: Mystical, natural, earthy tones matching card artwork
+- **Colors**: Deep forest green, golden brown, cream, muted jewel tones
+- **Typography**: Serif fonts (Cinzel, Garamond) for elegance
+- **Icons**: Hand-drawn animal silhouettes
+
+### Screen Layout
+1. **Home Screen**: Daily card, quick reading options
+2. **Card Library**: Grid view of all cards with search/filter
+3. **Reading Screen**: Interactive card selection and layout
+4. **Results Screen**: Cards displayed with interpretations
+5. **Profile/Settings**: Reading history, notifications, preferences
+
+## 🛠 Technical Requirements
+
+### Development Stack
+- **Platform**: Android (Kotlin/Java)
+- **Framework**: Native Android or Flutter for cross-platform
+- **Database**: SQLite for local storage, Firebase for cloud sync
+- **Analytics**: Google Analytics for user behavior
+- **Monetization**: In-app purchases, optional ads
+
+### Key Components
+- **Card Rendering Engine**: High-resolution image display with smooth animations
+- **Shuffle Algorithm**: Realistic card randomization
+- **Reading Logic**: Spread layouts and position meanings
+- **Data Management**: Card information, user readings, preferences
+
+## 🃏 Complete Card Database
+
+### Card Structure
+Each card contains:
+- **ID**: Unique identifier
+- **Name**: Full card name with animal
+- **Suite**: Major Arcana, Wands, Cups, Swords, Pentacles
+- **Element**: Fire, Water, Air, Earth (for Minor Arcana)
+- **Upright Meaning**: Positive interpretation
+- **Reversed Meaning**: Shadow/blocked interpretation
+- **Keywords**: 3-5 key concepts
+- **Description**: Detailed symbolic explanation
+- **Image**: High-resolution artwork
+- **Animal Symbolism**: Why this animal was chosen
+
+## 🎨 MidJourney Style Guide & Prompts
+
+### Universal Style Elements
+**Base Prompt Template**: 
+```
+"[CARD NAME] tarot card, classic Rider-Waite Smith style, [ANIMAL] [POSE/ACTION], [BACKGROUND/SETTING], [SPECIFIC ELEMENTS], ornate decorative border frame with gold filigree, card title '[CARD NAME]' in elegant banner at bottom only, no text at top, clean composition, [COLOR PALETTE], mystical atmosphere, detailed traditional illustration, vintage tarot deck aesthetic, professional tarot card design, high resolution, --ar 2:3"
+```
+
+### Style Consistency Rules
+1. **Aspect Ratio**: Always 2:3 (tarot card proportions)
+2. **Border**: Ornate decorative frame with golden filigree accents
+3. **Card Title**: ONLY at bottom in elegant banner, NO text at top
+4. **Composition**: Animal as central focal point, clean layout
+5. **Lighting**: Soft, mystical lighting appropriate to card meaning
+6. **Detail Level**: Highly detailed but readable at card size
+7. **Background**: Symbolic elements from Rider-Waite tradition
+8. **Text Placement**: Specify "no text at top" and "title at bottom only"
+
+---
+
+# 🔮 COMPLETE CARD COLLECTION WITH MIDJOURNEY PROMPTS
+
+## MAJOR ARCANA (22 Cards)
+
+### 0. The Fool - Butterfly
+**Upright**: New beginnings, adventure, childlike wonder, transformation, trust in the journey  
+**Reversed**: Hesitation, reckless leaps, naivety, fear
