@@ -12,14 +12,19 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
           channel: stable
 
-      - run: flutter pub get
-      - run: flutter build web --release --web-renderer canvaskit --base-href /animalia-arcana/
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Flutter Web (release)
+        run: flutter build web --release --base-href /animalia-arcana/
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
