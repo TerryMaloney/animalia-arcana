@@ -1,0 +1,44 @@
+# Flutter/Dart/Pub
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+flutter_*.png
+*.flutter-plugins
+*.flutter-plugins-dependencies
+*.flutter-versions
+
+# Android
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/key.properties
+**/android/*.keystore
+**/android/*.jks
+
+# iOS
+**/ios/Flutter/.last_build_id
+**/ios/Pods
+**/ios/.symlinks
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Web
+lib/generated_plugin_registrant.dart
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Misc
+*.log
+*.tmp
+*.swp
+*.DS_Store
