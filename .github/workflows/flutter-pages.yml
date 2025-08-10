@@ -24,7 +24,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Flutter Web (release)
-        run: flutter build web --release --base-href "/animalia-arcana/"
+        run: flutter build web --release --web-renderer canvaskit --base-href "/animalia-arcana/"
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
