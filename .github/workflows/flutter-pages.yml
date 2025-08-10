@@ -21,14 +21,16 @@ jobs:
           channel: stable
 
       - name: Install dependencies
+        working-directory: animalia_arcana
         run: flutter pub get
 
       - name: Build Flutter Web (release)
+        working-directory: animalia_arcana
         run: flutter build web --release --base-href "/animalia-arcana/"
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: build/web
+          folder: animalia_arcana/build/web
           clean: true
