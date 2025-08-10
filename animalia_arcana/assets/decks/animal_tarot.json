@@ -1,0 +1,31 @@
+﻿{
+    "id":  "animal_tarot",
+    "name":  "Animal Tarot",
+    "imageBasePath":  "assets/images/cards/",
+    "cards":  [
+                  {
+                      "id":  "lion-strength",
+                      "name":  "Strength",
+                      "image":  "lion.png",
+                      "upright":  "Courage, patience, inner power.",
+                      "reversed":  "Self-doubt, impulse, need for compassion.",
+                      "imagePath":  "images/cards/Bear.jpg"
+                  },
+                  {
+                      "id":  "butterfly-fool",
+                      "name":  "The Fool",
+                      "image":  "butterfly.png",
+                      "upright":  "Beginnings, spontaneity, free spirit.",
+                      "reversed":  "Hesitation, risk without plan.",
+                      "imagePath":  "images/cards/Butterfly.jpg"
+                  },
+                  {
+                      "id":  "fox-magician",
+                      "name":  "The Magician",
+                      "image":  "fox.png",
+                      "upright":  "Focus, resourcefulness, action.",
+                      "reversed":  "Scattered effort, manipulation, delays.",
+                      "imagePath":  "images/cards/Fox.jpg"
+                  }
+              ]
+}
