@@ -29,6 +29,7 @@ flutter_*.png
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 
+<<<<<<< HEAD
 # Web
 lib/generated_plugin_registrant.dart
 
@@ -42,3 +43,12 @@ lib/generated_plugin_registrant.dart
 *.tmp
 *.swp
 *.DS_Store
+=======
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# FVM
+.fvm/flutter_sdk
+>>>>>>> Infra: add RUNBOOK, CI workflow, and FVM config
