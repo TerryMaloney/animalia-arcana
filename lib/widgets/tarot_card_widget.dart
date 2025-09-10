@@ -31,7 +31,7 @@ class TarotCardWidget extends StatelessWidget {
     return GestureDetector(
       behavior: HitTestBehavior.translucent, // FIXES WEB CLICKS
       onTap: isInteractive ? () {
-        print('🔄 Card tapped: ${card.name}');
+        debugPrint('🔄 Card tapped: ${card.name}');
         onTap?.call();
       } : null,
       child: Container(
@@ -42,18 +42,18 @@ class TarotCardWidget extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              const Color(0xFFFFD700).withOpacity(0.1),
-              const Color(0xFF2D1B69).withOpacity(0.3),
+              const Color(0xFFFFD700).withValues(alpha: 0.1),
+              const Color(0xFF2D1B69).withValues(alpha: 0.3),
             ],
           ),
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
-            color: const Color(0xFFFFD700).withOpacity(0.5),
+            color: const Color(0xFFFFD700).withValues(alpha: 0.5),
             width: 2,
           ),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
-              color: const Color(0xFFFFD700).withOpacity(0.2),
+              color: Color(0x80FFD700),
               blurRadius: 10,
               spreadRadius: 2,
             ),
@@ -70,8 +70,8 @@ class TarotCardWidget extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      const Color(0xFF2D1B69).withOpacity(0.8),
-                      const Color(0xFF0A0A0A).withOpacity(0.9),
+                      const Color(0xFF2D1B69).withValues(alpha: 0.8),
+                      const Color(0xFF0A0A0A).withValues(alpha: 0.9),
                     ],
                   ),
                 ),
@@ -90,7 +90,7 @@ class TarotCardWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                          color: const Color(0xFFFFD700).withOpacity(0.3),
+                          color: const Color(0xFFFFD700).withValues(alpha: 0.3),
                           width: 1,
                         ),
                       ),
@@ -123,9 +123,9 @@ class TarotCardWidget extends StatelessWidget {
                     // Animal name
                     Text(
                       card.animal,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 8,
-                        color: const Color(0xFFFFD700),
+                        color: Color(0xFFFFD700),
                         fontWeight: FontWeight.w500,
                       ),
                       textAlign: TextAlign.center,
@@ -141,8 +141,8 @@ class TarotCardWidget extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
                           color: isReversed
-                              ? Colors.red.withOpacity(0.3)
-                              : const Color(0xFFFFD700).withOpacity(0.2),
+                              ? Colors.red.withValues(alpha: 0.3)
+                              : const Color(0xFFFFD700).withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Text(
@@ -227,10 +227,10 @@ class CardDetailWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF2D1B69).withOpacity(0.3),
+        color: const Color(0xFF2D1B69).withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: const Color(0xFFFFD700).withOpacity(0.3),
+          color: const Color(0xFFFFD700).withValues(alpha: 0.3),
           width: 1,
         ),
       ),

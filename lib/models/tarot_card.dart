@@ -53,6 +53,36 @@ class TarotCard {
     };
   }
 
+  factory TarotCard.fromJson(Map<String, dynamic> json) {
+    return TarotCard(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      animal: json['animal'] as String,
+      type: json['type'] as String,
+      suit: json['suit'] as String,
+      number: json['number'] as int,
+      imagePath: json['imagePath'] as String,
+      keywords: json['keywords'] as String,
+      uprightMeaning: json['uprightMeaning'] as String,
+      reversedMeaning: json['reversedMeaning'] as String,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'animal': animal,
+      'type': type,
+      'suit': suit,
+      'number': number,
+      'imagePath': imagePath,
+      'keywords': keywords,
+      'uprightMeaning': uprightMeaning,
+      'reversedMeaning': reversedMeaning,
+    };
+  }
+
   String get displayName => '$name - $animal';
   String get shortName => name;
   bool get isMajorArcana => type == 'major';

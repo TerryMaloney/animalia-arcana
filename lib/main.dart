@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SimpleTestApp());
+  runApp(const SimpleTestApp());
 }
 
 class SimpleTestApp extends StatelessWidget {
+  const SimpleTestApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Simple Flutter Web Test',
       theme: ThemeData.dark(),
-      home: SimpleTestScreen(),
+      home: const SimpleTestScreen(),
     );
   }
 }
 
 class SimpleTestScreen extends StatefulWidget {
+  const SimpleTestScreen({super.key});
   @override
-  _SimpleTestScreenState createState() => _SimpleTestScreenState();
+  State<SimpleTestScreen> createState() => _SimpleTestScreenState();
 }
 
 class _SimpleTestScreenState extends State<SimpleTestScreen> {
   int counter = 0;
 
   void _incrementCounter() {
-    print('🔄 Button clicked! Counter: $counter');
+    debugPrint('🔄 Button clicked! Counter: $counter');
     setState(() {
       counter++;
     });
-    print('✅ Counter updated to: $counter');
+    debugPrint('✅ Counter updated to: $counter');
   }
 
   @override
@@ -36,14 +38,14 @@ class _SimpleTestScreenState extends State<SimpleTestScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('SIMPLE TEST'),
+        title: const Text('SIMPLE TEST'),
         backgroundColor: Colors.purple,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'FLUTTER WEB TEST',
               style: TextStyle(
                 fontSize: 32,
@@ -51,41 +53,41 @@ class _SimpleTestScreenState extends State<SimpleTestScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Text(
               'Counter: $counter',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: _incrementCounter,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               ),
-              child: Text(
+              child: const Text(
                 'CLICK ME!',
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               width: 100,
               height: 100,
               color: Colors.red,
               child: GestureDetector(
                 onTap: () {
-                  print('🔄 Red box tapped!');
+                  debugPrint('🔄 Red box tapped!');
                   setState(() {
                     counter += 10;
                   });
-                  print('✅ Counter jumped to: $counter');
+                  debugPrint('✅ Counter jumped to: $counter');
                 },
-                child: Center(
+                child: const Center(
                   child: Text(
                     'TAP',
                     style: TextStyle(

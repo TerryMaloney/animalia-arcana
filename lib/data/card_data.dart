@@ -1,5 +1,4 @@
 import '../models/tarot_card.dart';
-import '../services/image_service.dart';
 
 class CardData {
   static const List<Map<String, dynamic>> allCards = [

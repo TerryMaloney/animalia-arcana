@@ -25,7 +25,8 @@ class TarotService {
     bool isReversed = _random.nextBool();
     return ReadingCard(
       card: card,
-      isReversed: isReversed,
+      orientation: isReversed ? 'reversed' : 'upright',
+      position: 'Single Card',
     );
   }
 
@@ -38,7 +39,8 @@ class TarotService {
       bool isReversed = _random.nextBool();
       cards.add(ReadingCard(
         card: deck[i],
-        isReversed: isReversed,
+        orientation: isReversed ? 'reversed' : 'upright',
+        position: 'Card ${i + 1}',
       ));
     }
     
@@ -53,17 +55,17 @@ class TarotService {
     if (cards.length >= 3) {
       cards[0] = ReadingCard(
         card: cards[0].card,
-        isReversed: cards[0].isReversed,
+        orientation: cards[0].orientation,
         position: 'Past',
       );
       cards[1] = ReadingCard(
         card: cards[1].card,
-        isReversed: cards[1].isReversed,
+        orientation: cards[1].orientation,
         position: 'Present',
       );
       cards[2] = ReadingCard(
         card: cards[2].card,
-        isReversed: cards[2].isReversed,
+        orientation: cards[2].orientation,
         position: 'Future',
       );
     }
@@ -93,7 +95,7 @@ class TarotService {
       for (int i = 0; i < 10; i++) {
         cards[i] = ReadingCard(
           card: cards[i].card,
-          isReversed: cards[i].isReversed,
+          orientation: cards[i].orientation,
           position: positions[i],
         );
       }
@@ -106,6 +108,11 @@ class TarotService {
   static TarotCard getDailyCard() {
     List<TarotCard> deck = CardData.getAllCards();
     return deck[_random.nextInt(deck.length)];
+  }
+
+  // Get all cards (static version)
+  static List<TarotCard> getAllCards() {
+    return CardData.getAllCards();
   }
 
   // Search cards by query
@@ -137,6 +144,37 @@ class TarotService {
   // Get card by ID
   static TarotCard? getCardById(int id) {
     return CardData.getCardById(id);
+  }
+
+
+  // Perform a reading
+  Future<Reading> performReading(String type, String question) async {
+    List<ReadingCard> cards = [];
+    
+    switch (type) {
+      case 'single':
+        cards = [drawSingleCard()];
+        break;
+      case 'three_card':
+        cards = threeCardSpread();
+        break;
+      case 'celtic_cross':
+        cards = celticCrossSpread();
+        break;
+      default:
+        cards = [drawSingleCard()];
+    }
+    
+    String interpretation = generateReadingInterpretation(cards, type);
+    
+    return Reading(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      type: type,
+      date: DateTime.now(),
+      cards: cards,
+      question: question,
+      interpretation: interpretation,
+    );
   }
 
   // Generate reading interpretation
@@ -176,7 +214,7 @@ class TarotService {
     interpretation += 'Present: ${cards[1].card.displayName} (${cards[1].orientation})\n';
     interpretation += '${cards[1].meaning}\n\n';
     interpretation += 'Future: ${cards[2].card.displayName} (${cards[2].orientation})\n';
-    interpretation += '${cards[2].meaning}';
+    interpretation += cards[2].meaning;
     
     return interpretation;
   }

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import '../models/tarot_card.dart';
 
 class ImageService {
@@ -98,17 +98,17 @@ class ImageService {
 
   // Get image path for a card
   static String getCardImagePath(TarotCard card) {
-    print('🔍 ImageService: Looking up image for card "${card.name}"');
+    debugPrint('🔍 ImageService: Looking up image for card "${card.name}"');
     final imageFile = _cardImageMap[card.name];
     if (imageFile != null) {
       final path = '$_basePath$imageFile';
-      print('✅ ImageService: Found mapping "${card.name}" -> "$imageFile"');
-      print('📁 ImageService: Full path: $path');
+      debugPrint('✅ ImageService: Found mapping "${card.name}" -> "$imageFile"');
+      debugPrint('📁 ImageService: Full path: $path');
       return path;
     }
     // Fallback to animal name if exact match not found
     final fallbackPath = '$_basePath${card.animal}.jpg';
-    print('⚠️ ImageService: No mapping found for "${card.name}", using fallback: $fallbackPath');
+    debugPrint('⚠️ ImageService: No mapping found for "${card.name}", using fallback: $fallbackPath');
     return fallbackPath;
   }
 

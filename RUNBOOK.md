@@ -22,6 +22,17 @@ flutter pub get
 flutter run -d emulator-5554
 ```
 
+### App Startup Flow
+1. **Splash Screen**: Custom branded splash with animated logo (2 seconds)
+2. **Onboarding**: First-time users see 4-page welcome flow
+3. **Main App**: Home screen with daily draw, streak tracking, and navigation
+
+### Development Tips
+- **Animations**: Use centralized constants from `lib/presentation/theme/animations.dart`
+- **FlipCard Widget**: Reusable 3D flip animation with controller support
+- **Testing**: Run `flutter test` to verify widget animations and accessibility
+- **Performance**: Animations are optimized for 60fps with proper frame budgeting
+
 ### Emulator Startup
 1. Open Android Studio
 2. Go to Device Manager

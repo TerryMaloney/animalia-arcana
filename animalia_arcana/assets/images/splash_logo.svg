@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#2D1B69" stroke="#FFD700" stroke-width="4"/>
+  
+  <!-- Inner circle -->
+  <circle cx="100" cy="100" r="70" fill="#FFD700"/>
+  
+  <!-- Mystical eye -->
+  <ellipse cx="100" cy="100" rx="25" ry="35" fill="#2D1B69"/>
+  <ellipse cx="100" cy="100" rx="15" ry="20" fill="#FFD700"/>
+  <circle cx="100" cy="100" r="8" fill="#2D1B69"/>
+  
+  <!-- Mystical rays -->
+  <line x1="100" y1="20" x2="100" y2="10" stroke="#FFD700" stroke-width="3"/>
+  <line x1="100" y1="190" x2="100" y2="180" stroke="#FFD700" stroke-width="3"/>
+  <line x1="20" y1="100" x2="10" y2="100" stroke="#FFD700" stroke-width="3"/>
+  <line x1="190" y1="100" x2="180" y2="100" stroke="#FFD700" stroke-width="3"/>
+  <line x1="35" y1="35" x2="25" y2="25" stroke="#FFD700" stroke-width="3"/>
+  <line x1="175" y1="175" x2="165" y2="165" stroke="#FFD700" stroke-width="3"/>
+  <line x1="35" y1="165" x2="25" y2="175" stroke="#FFD700" stroke-width="3"/>
+  <line x1="175" y1="35" x2="165" y2="25" stroke="#FFD700" stroke-width="3"/>
+</svg>

@@ -44,14 +44,14 @@ class _GalleryScreenState extends State<GalleryScreen> {
     
     // Debug: Print first few cards to verify data
     if (cards.isNotEmpty) {
-      print('Gallery: Loaded ${cards.length} cards');
-      print('First card: ${cards.first.name} - ${cards.first.animal}');
-      print('First card image path: ${cards.first.imagePath}');
+      debugPrint('Gallery: Loaded ${cards.length} cards');
+      debugPrint('First card: ${cards.first.name} - ${cards.first.animal}');
+      debugPrint('First card image path: ${cards.first.imagePath}');
       
       // Test image loading for first few cards
       for (int i = 0; i < 3 && i < cards.length; i++) {
         final card = cards[i];
-        print('Card ${i + 1}: ${card.name} -> ${card.imagePath}');
+        debugPrint('Card ${i + 1}: ${card.name} -> ${card.imagePath}');
       }
     }
   }
@@ -111,10 +111,10 @@ class _GalleryScreenState extends State<GalleryScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF2D1B69).withOpacity(0.5),
+                      color: const Color(0xFF2D1B69).withValues(alpha: 0.5),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: const Color(0xFFFFD700).withOpacity(0.3),
+                        color: const Color(0xFFFFD700).withValues(alpha: 0.3),
                         width: 1,
                       ),
                     ),
@@ -191,13 +191,13 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? const Color(0xFFFFD700).withOpacity(0.3)
-                      : const Color(0xFF2D1B69).withOpacity(0.3),
+                      ? const Color(0xFFFFD700).withValues(alpha: 0.3)
+                      : const Color(0xFF2D1B69).withValues(alpha: 0.3),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                     color: isSelected
                         ? const Color(0xFFFFD700)
-                        : const Color(0xFFFFD700).withOpacity(0.3),
+                        : const Color(0xFFFFD700).withValues(alpha: 0.3),
                     width: 1,
                   ),
                 ),
@@ -220,20 +220,20 @@ class _GalleryScreenState extends State<GalleryScreen> {
   }
 
   Widget _buildCardItem(TarotCard card) {
-    print('🔄 Building card item: ${card.name}');
+    debugPrint('🔄 Building card item: ${card.name}');
     return GestureDetector(
       behavior: HitTestBehavior.translucent, // FIXES WEB CLICKS
       onTap: () {
-        print('🔄 Gallery card tapped: ${card.name}');
+        debugPrint('🔄 Gallery card tapped: ${card.name}');
         _showCardDetail(card);
       },
       child: Container(
         margin: const EdgeInsets.all(4),
         decoration: BoxDecoration(
-          color: const Color(0xFF2D1B69).withOpacity(0.3),
+          color: const Color(0xFF2D1B69).withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: const Color(0xFFFFD700).withOpacity(0.3),
+            color: const Color(0xFFFFD700).withValues(alpha: 0.3),
             width: 1,
           ),
         ),
@@ -248,7 +248,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   }
 
   void _showCardDetail(TarotCard card) {
-    print('🔄 Showing card detail for: ${card.name}');
+    debugPrint('🔄 Showing card detail for: ${card.name}');
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -272,9 +272,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 isInteractive: false,
               ),
               const SizedBox(height: 20),
-              Text(
+              const Text(
                 'Upright Meaning:',
-                style: const TextStyle(
+                style: TextStyle(
                   color: Color(0xFFFFD700),
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -290,9 +290,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Text(
+              const Text(
                 'Reversed Meaning:',
-                style: const TextStyle(
+                style: TextStyle(
                   color: Color(0xFFFFD700),
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -313,7 +313,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              print('🔄 Card detail dialog closed');
+              debugPrint('🔄 Card detail dialog closed');
               Navigator.of(context).pop();
             },
             child: const Text(

@@ -60,10 +60,10 @@ class HistoryScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF2D1B69).withOpacity(0.5),
+                          color: const Color(0xFF2D1B69).withValues(alpha: 0.5),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: const Color(0xFFFFD700).withOpacity(0.3),
+                            color: const Color(0xFFFFD700).withValues(alpha: 0.3),
                             width: 1,
                           ),
                         ),
@@ -141,10 +141,10 @@ class HistoryScreen extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 15),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: const Color(0xFF2D1B69).withOpacity(0.3),
+          color: const Color(0xFF2D1B69).withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
-            color: const Color(0xFFFFD700).withOpacity(0.3),
+            color: const Color(0xFFFFD700).withValues(alpha: 0.3),
             width: 1,
           ),
         ),
@@ -156,7 +156,7 @@ class HistoryScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFFFD700).withOpacity(0.2),
+                    color: const Color(0xFFFFD700).withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Icon(
@@ -191,7 +191,7 @@ class HistoryScreen extends StatelessWidget {
                 Icon(
                   Icons.arrow_forward_ios,
                   size: 16,
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Colors.grey.withValues(alpha: 0.5),
                 ),
               ],
             ),
@@ -244,7 +244,7 @@ class HistoryScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFFFD700).withOpacity(0.2),
+                    color: const Color(0xFFFFD700).withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Text(
@@ -260,7 +260,7 @@ class HistoryScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.grey.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Text(
@@ -328,7 +328,7 @@ class HistoryScreen extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
-              if (reading.question != null) ...[
+              if (reading.question.isNotEmpty) ...[
                 const SizedBox(height: 10),
                 Text(
                   'Question: ${reading.question}',
@@ -374,7 +374,7 @@ class HistoryScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        card.position ?? 'Card ${index + 1}',
+                        card.position.isNotEmpty ? card.position : 'Card ${index + 1}',
                         style: const TextStyle(
                           fontSize: 8,
                           color: Colors.grey,

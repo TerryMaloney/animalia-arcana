@@ -1,31 +1,72 @@
 ﻿{
-    "id":  "animal_tarot",
-    "name":  "Animal Tarot",
-    "imageBasePath":  "assets/images/cards/",
-    "cards":  [
-                  {
-                      "id":  "lion-strength",
-                      "name":  "Strength",
-                      "image":  "lion.png",
-                      "upright":  "Courage, patience, inner power.",
-                      "reversed":  "Self-doubt, impulse, need for compassion.",
-                      "imagePath":  "images/cards/Bear.jpg"
-                  },
-                  {
-                      "id":  "butterfly-fool",
-                      "name":  "The Fool",
-                      "image":  "butterfly.png",
-                      "upright":  "Beginnings, spontaneity, free spirit.",
-                      "reversed":  "Hesitation, risk without plan.",
-                      "imagePath":  "images/cards/Butterfly.jpg"
-                  },
-                  {
-                      "id":  "fox-magician",
-                      "name":  "The Magician",
-                      "image":  "fox.png",
-                      "upright":  "Focus, resourcefulness, action.",
-                      "reversed":  "Scattered effort, manipulation, delays.",
-                      "imagePath":  "images/cards/Fox.jpg"
-                  }
-              ]
+  "id": "animal_tarot",
+  "name": "Animal Tarot",
+  "imageBasePath": "assets/images/cards/",
+  "cards": [
+    {
+      "id": "lion-strength",
+      "name": "Strength",
+      "animal": "Lion",
+      "suit": "Major Arcana",
+      "number": 8,
+      "imagePath": "assets/images/cards/lion.jpg",
+      "upright": "Courage, patience, inner power. The lion represents the strength to overcome challenges through gentle but firm determination.",
+      "reversed": "Self-doubt, impulse, need for compassion. When reversed, this card suggests inner weakness or the need to find balance between strength and gentleness.",
+      "keywords": ["courage", "patience", "inner strength", "determination", "gentle power"],
+      "description": "The Strength card shows a lion being gently tamed by a figure, representing the power of inner strength over brute force.",
+      "deckId": "animal_tarot"
+    },
+    {
+      "id": "butterfly-fool",
+      "name": "The Fool",
+      "animal": "Butterfly",
+      "suit": "Major Arcana",
+      "number": 0,
+      "imagePath": "assets/images/cards/butterfly.jpg",
+      "upright": "Beginnings, spontaneity, free spirit. The butterfly represents new adventures and the joy of starting fresh.",
+      "reversed": "Hesitation, risk without plan. When reversed, this card warns against reckless behavior or being too naive.",
+      "keywords": ["new beginnings", "spontaneity", "adventure", "innocence", "fresh start"],
+      "description": "The Fool card shows a butterfly beginning its journey, representing the start of a new adventure with an open heart.",
+      "deckId": "animal_tarot"
+    },
+    {
+      "id": "fox-magician",
+      "name": "The Magician",
+      "animal": "Fox",
+      "suit": "Major Arcana",
+      "number": 1,
+      "imagePath": "assets/images/cards/fox.jpg",
+      "upright": "Focus, resourcefulness, action. The fox represents the ability to manifest desires through skill and determination.",
+      "reversed": "Scattered effort, manipulation, delays. When reversed, this card suggests misuse of power or lack of focus.",
+      "keywords": ["manifestation", "skill", "focus", "resourcefulness", "action"],
+      "description": "The Magician card shows a fox with all the tools needed to create magic, representing the power to manifest your desires.",
+      "deckId": "animal_tarot"
+    },
+    {
+      "id": "owl-high-priestess",
+      "name": "The High Priestess",
+      "animal": "Owl",
+      "suit": "Major Arcana",
+      "number": 2,
+      "imagePath": "assets/images/cards/owl.jpg",
+      "upright": "Intuition, mystery, inner knowledge. The owl represents the wisdom that comes from within and the mysteries of the subconscious.",
+      "reversed": "Lack of inner voice, repressed intuition. When reversed, this card suggests ignoring your inner wisdom or being too secretive.",
+      "keywords": ["intuition", "mystery", "wisdom", "subconscious", "inner knowledge"],
+      "description": "The High Priestess card shows an owl in the moonlight, representing the deep wisdom and intuition that lies within us all.",
+      "deckId": "animal_tarot"
+    },
+    {
+      "id": "eagle-emperor",
+      "name": "The Emperor",
+      "animal": "Eagle",
+      "suit": "Major Arcana",
+      "number": 4,
+      "imagePath": "assets/images/cards/eagle.jpg",
+      "upright": "Authority, structure, leadership. The eagle represents the power of leadership and the ability to create order from chaos.",
+      "reversed": "Tyranny, rigidity, lack of discipline. When reversed, this card suggests abuse of power or being too controlling.",
+      "keywords": ["authority", "leadership", "structure", "order", "discipline"],
+      "description": "The Emperor card shows an eagle soaring high, representing the power of leadership and the ability to see the big picture.",
+      "deckId": "animal_tarot"
+    }
+  ]
 }

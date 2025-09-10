@@ -10,6 +10,7 @@
         "cupertino_icons",
         "flutter",
         "flutter_staggered_animations",
+        "logger",
         "provider",
         "shared_preferences",
         "uuid"
@@ -42,6 +43,13 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "logger",
+      "version": "2.6.1",
+      "dependencies": [
+        "meta"
       ]
     },
     {

@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   TarotCard? _dailyCard;
-  bool _isLoadingDailyCard = false;
 
   @override
   void initState() {
@@ -22,10 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _loadDailyCard() async {
-    setState(() {
-      _isLoadingDailyCard = true;
-    });
-
     try {
       final provider = Provider.of<TarotProvider>(context, listen: false);
       final dailyCard = await provider.getDailyCard();
@@ -34,10 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     } catch (e) {
       // Handle error
-    } finally {
-      setState(() {
-        _isLoadingDailyCard = false;
-      });
     }
   }
 
@@ -101,16 +92,16 @@ class _HomeScreenState extends State<HomeScreen> {
               GestureDetector(
                 behavior: HitTestBehavior.translucent, // FIXES WEB CLICKS
                 onTap: () {
-                  print('🔄 Daily card tapped');
+                  debugPrint('🔄 Daily card tapped');
                   _showDailyCardDetail(_dailyCard!);
                 },
                 child: Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF2D1B69).withOpacity(0.3),
+                    color: const Color(0xFF2D1B69).withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: const Color(0xFFFFD700).withOpacity(0.3),
+                      color: const Color(0xFFFFD700).withValues(alpha: 0.3),
                       width: 1,
                     ),
                   ),
@@ -160,28 +151,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GestureDetector(
                       behavior: HitTestBehavior.translucent, // FIXES WEB CLICKS
                       onTap: () {
-                        print('🔄 Quick Reading button pressed');
+                        debugPrint('🔄 Quick Reading button pressed');
                         _navigateToReadings(context);
                       },
                       child: Container(
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF2D1B69).withOpacity(0.3),
+                          color: const Color(0xFF2D1B69).withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(
-                            color: const Color(0xFFFFD700).withOpacity(0.3),
+                            color: const Color(0xFFFFD700).withValues(alpha: 0.3),
                             width: 1,
                           ),
                         ),
-                        child: Column(
+                        child: const Column(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.auto_stories,
                               color: Color(0xFFFFD700),
                               size: 30,
                             ),
-                            const SizedBox(height: 8),
-                            const Text(
+                            SizedBox(height: 8),
+                            Text(
                               'Quick Reading',
                               style: TextStyle(
                                 fontSize: 14,
@@ -200,28 +191,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GestureDetector(
                       behavior: HitTestBehavior.translucent, // FIXES WEB CLICKS
                       onTap: () {
-                        print('🔄 Card Gallery button pressed');
+                        debugPrint('🔄 Card Gallery button pressed');
                         _navigateToGallery(context);
                       },
                       child: Container(
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF2D1B69).withOpacity(0.3),
+                          color: const Color(0xFF2D1B69).withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(
-                            color: const Color(0xFFFFD700).withOpacity(0.3),
+                            color: const Color(0xFFFFD700).withValues(alpha: 0.3),
                             width: 1,
                           ),
                         ),
-                        child: Column(
+                        child: const Column(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.photo_library,
                               color: Color(0xFFFFD700),
                               size: 30,
                             ),
-                            const SizedBox(height: 8),
-                            const Text(
+                            SizedBox(height: 8),
+                            Text(
                               'Card Gallery',
                               style: TextStyle(
                                 fontSize: 14,
@@ -244,50 +235,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildQuickAction(
-    BuildContext context,
-    String title,
-    IconData icon,
-    VoidCallback onTap,
-  ) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 150,
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: const Color(0xFF2D1B69).withOpacity(0.5),
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            color: const Color(0xFFFFD700).withOpacity(0.3),
-            width: 1,
-          ),
-        ),
-        child: Column(
-          children: [
-            Icon(
-              icon,
-              size: 40,
-              color: const Color(0xFFFFD700),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   void _navigateToReadings(BuildContext context) {
-    print('🔄 Navigating to readings...');
+    debugPrint('🔄 Navigating to readings...');
     // Use a simpler approach - just show a message for now
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -297,20 +247,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
     
-    // Try to find the parent MainScreen and update its index
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final mainScreen = context.findAncestorStateOfType<_MainScreenState>();
-      if (mainScreen != null) {
-        print('✅ Found MainScreen, updating to index 1');
-        mainScreen.updateIndex(1); // Readings tab index
-      } else {
-        print('❌ MainScreen not found');
-      }
-    });
+    // Navigation will be handled by the parent widget
   }
 
   void _navigateToGallery(BuildContext context) {
-    print('🔄 Navigating to gallery...');
+    debugPrint('🔄 Navigating to gallery...');
     // Use a simpler approach - just show a message for now
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -320,16 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
     
-    // Try to find the parent MainScreen and update its index
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final mainScreen = context.findAncestorStateOfType<_MainScreenState>();
-      if (mainScreen != null) {
-        print('✅ Found MainScreen, updating to index 2');
-        mainScreen.updateIndex(2); // Gallery tab index
-      } else {
-        print('❌ MainScreen not found');
-      }
-    });
+    // Navigation will be handled by the parent widget
   }
 
   void _showDailyCardDetail(TarotCard card) {
@@ -390,10 +322,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-// Helper class to access MainScreen state
-class _MainScreenState {
-  void updateIndex(int index) {
-    // This will be implemented in the actual MainScreen
-  }
-} 

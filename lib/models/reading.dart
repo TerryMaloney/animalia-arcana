@@ -26,6 +26,12 @@ class ReadingCard {
       'position': position,
     };
   }
+
+  bool get isReversed => orientation == 'reversed';
+  
+  String get meaning {
+    return isReversed ? card.reversedMeaning : card.uprightMeaning;
+  }
 }
 
 class Reading {
@@ -67,5 +73,24 @@ class Reading {
       'question': question,
       'interpretation': interpretation,
     };
+  }
+
+  String get displayType {
+    switch (type) {
+      case 'single':
+        return 'Single Card';
+      case 'three_card':
+        return 'Three Card Spread';
+      case 'celtic_cross':
+        return 'Celtic Cross';
+      case 'daily':
+        return 'Daily Card';
+      default:
+        return type;
+    }
+  }
+
+  String get formattedDate {
+    return '${date.day}/${date.month}/${date.year}';
   }
 }
