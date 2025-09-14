@@ -1,0 +1,3 @@
+﻿analyzer:
+  exclude:
+    - animalia_arcana/**
