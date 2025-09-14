@@ -52,3 +52,4 @@ lib/generated_plugin_registrant.dart
 # FVM
 .fvm/flutter_sdk
 >>>>>>> Infra: add RUNBOOK, CI workflow, and FVM config
+animalia_arcana/
