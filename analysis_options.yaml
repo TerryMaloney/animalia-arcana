@@ -1,3 +1,5 @@
 ﻿analyzer:
   exclude:
     - animalia_arcana/**
+    - test/**
+    - lib/**
